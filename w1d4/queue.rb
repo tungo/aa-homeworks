@@ -12,6 +12,21 @@ class Queue
   end
 
   def show
-    self.dup
+    self
+  end
+end
+
+if __FILE__ == $PROGRAM_NAME
+  queue = Queue.new
+  p queue.show
+
+  10.times do |num|
+    queue.enqueue(num)
+    p queue
+  end
+
+  10.times do
+    queue.dequeue
+    p queue
   end
 end
