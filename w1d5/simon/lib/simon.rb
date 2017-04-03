@@ -30,10 +30,22 @@ class Simon
 
   def show_sequence
     add_random_color
+    puts seq
+    sleep 1
+    system('clear')
   end
 
   def require_sequence
+    puts 'Enter color (e.g. rbgy):'
+    print '> '
 
+    guessed = gets.chomp.chars
+    guessed.each_with_index do |color, idx|
+      if color != seq[idx][0]
+        @game_over = true
+        return
+      end
+    end
   end
 
   def add_random_color
@@ -41,11 +53,11 @@ class Simon
   end
 
   def round_success_message
-
+    puts 'You won this round.'
   end
 
   def game_over_message
-
+    puts 'Game over!'
   end
 
   def reset_game
@@ -53,4 +65,9 @@ class Simon
     @game_over = false
     @seq = []
   end
+end
+
+if __FILE__ == $PROGRAM_NAME
+  game = Simon.new
+  game.play
 end
