@@ -20,14 +20,36 @@ class Board
   end
 
   def valid_move?(start_pos)
-    
+    raise "Invalid starting cup" unless start_pos.between?(1, 12)
   end
 
   def make_move(start_pos, current_player_name)
+    stones, @cups[start_pos] = @cups[start_pos], []
+
+    curr_pos = start_pos
+    until stones.empty?
+      curr_pos += 1
+
+      curr_pos = 0 if curr_pos == 14
+
+      next if curr_pos == 6 && current_player_name == @name2
+      next if curr_pos == 13 && current_player_name == @name1
+
+      @cups[curr_pos] << stones.pop
+    end
+
+    render
+    next_turn(curr_pos)
   end
 
   def next_turn(ending_cup_idx)
-    # helper method to determine what #make_move returns
+    if ending_cup_idx == 13 || ending_cup_idx == 6
+      :prompt
+    elsif @cups[ending_cup_idx].size == 1
+      :switch
+    elsif @cups[ending_cup_idx].size > 1
+      ending_cup_idx
+    end
   end
 
   def render
