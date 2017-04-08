@@ -61,8 +61,14 @@ class Board
   end
 
   def one_side_empty?
+    @cups[0..5].all?(&:empty?) || @cups[7..12].all?(&:empty?)
   end
 
   def winner
+    case @cups[6].size <=> @cups[13].size
+    when -1 then @name2
+    when 0 then :draw
+    when 1 then @name1
+    end
   end
 end
