@@ -56,8 +56,16 @@ end
 p dominant(fishes)
 
 def clever(fishes)
-  
+  longest = nil
+
+  fishes.each do |fish|
+    longest = fish if longest.nil? || longest.length < fish.length
+  end
+
+  longest
 end
+
+p clever(fishes)
 
 def slow_dance(dir, tiles)
 
