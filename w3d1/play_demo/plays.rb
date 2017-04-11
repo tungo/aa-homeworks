@@ -87,7 +87,7 @@ class Playwright
   end
 
   def self.find_by_name(name)
-    result = PlayDBConnection.instance.execute(<<-SQL, name)
+    rows = PlayDBConnection.instance.execute(<<-SQL, name)
       SELECT
         *
       FROM
@@ -96,7 +96,7 @@ class Playwright
         name = ?
     SQL
 
-    Playwright.new(result)
+    rows.map { |row| Playwright.new(row) }
   end
 
   def initialize(options)
@@ -130,4 +130,16 @@ class Playwright
     SQL
   end
 
+  def get_plays
+    rows = PlayDBConnection.instance.execute(<<-SQL, @id)
+      SELECT
+        *
+      FROM
+        plays
+      WHERE
+        playwright_id = ?
+    SQL
+
+    rows.map { |row| Play.new(row) }
+  end
 end
