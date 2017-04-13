@@ -70,7 +70,11 @@ def pulp_fiction_actors
   # practice using joins
   # display the id and name of all actors in the movie Pulp Fiction
   # hint: use 'select', 'joins', 'where'
-  
+  Actor
+    .select('actors.*')
+    .joins('JOIN castings ON castings.actor_id = actors.id')
+    .joins('JOIN movies ON movies.id = castings.movie_id')
+    .where("movies.title = 'Pulp Fiction'")
 end
 
 def uma_movies
@@ -78,5 +82,10 @@ def uma_movies
   # display the id, title, and year of movies Uma Thurman has acted in
   # order them by ascending year
   # hint: use 'select', 'joins', 'where', and 'order'
-
+  Movie
+    .select('movies.id, movies.title, movies.yr')
+    .joins('JOIN castings ON castings.movie_id = movies.id')
+    .joins("JOIN actors ON actors.id = castings.actor_id")
+    .where("actors.name = 'Uma Thurman'")
+    .order('yr')
 end
