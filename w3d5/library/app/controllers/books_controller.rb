@@ -4,11 +4,13 @@ class BooksController < ApplicationController
   end
 
   def new
-    # your code here
+
   end
 
   def create
-    # your code here
+    Book.create(book_params)
+
+    redirect_to books_url
   end
 
   def destroy
