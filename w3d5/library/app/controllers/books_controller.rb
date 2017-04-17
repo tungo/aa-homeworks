@@ -12,7 +12,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    # your code here
+    Book.delete(params[:id])
+
+    redirect_to books_url
   end
 
   private
