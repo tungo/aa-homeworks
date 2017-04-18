@@ -59,6 +59,56 @@
       </ol>
     </section>
 
+    <section>
+      <form action="/reviews" method="POST">
+        <label for="reviewer-name">Reviewer name:</label>
+        <input type="text" id="reviewer-name" name="reviewer[name]" />
+        <br />
+
+        <label>Rating:</label>
+        <br />
+        <label for="r1">
+          <input type="radio" id="r1" name="reviewer[rating]" value="1" checked="checked" />
+          *
+        </label>
+        <br />
+        <label for="r2">
+          <input type="radio" id="r2" name="reviewer[rating]" value="2" />
+          **
+        </label>
+        <br />
+        <label for="r3">
+          <input type="radio" id="r3" name="reviewer[rating]" value="3" />
+          ***
+        </label>
+        <br />
+        <label for="r4">
+          <input type="radio" id="r4" name="reviewer[rating]" value="4" />
+          ****
+        </label>
+        <br />
+        <label for="r5">
+          <input type="radio" id="r5" name="reviewer[rating]" value="5" />
+          *****
+        </label>
+        <br />
+
+        <label for="cooking_expertise">Cooking Expertise:</label>
+        <select id="cooking_expertise" name="reviewer[cooking_expertise]">
+          <option value="" disabled="disabled" selected="selected">-- Select Cooking Expertise --</option>
+          <option value="sometimes_cook">Sometimes Cook</option>
+          <option value="cook_everyday">Cook Everyday</option>
+          <option value="cooking_is_a_hobby">Cooking is a Hobby</option>
+          <option value="professional_chef">Professional Chef</option>
+        </select>
+        <br />
+
+        <label>Review:
+          <textarea name="reviewer[review]" cols="30" rows="5"></textarea>
+        </label>
+      </form>
+    </section>
+
     <footer>
       <p>
         Original Recipe by <a href="http://www.chatelaine.com/recipes/chatelainekitchen/how-to-cook-a-perfect-steak-indoors/">chatelaine.com</a>
