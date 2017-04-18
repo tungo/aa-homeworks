@@ -65,7 +65,7 @@
         <input type="text" id="reviewer-name" name="reviewer[name]" />
         <br />
 
-        <label>Rating</label>
+        <label>Rating:</label>
         <br />
         <label for="r1">
           <input type="radio" id="r1" name="reviewer[rating]" value="1" checked="checked" />
@@ -93,7 +93,7 @@
         </label>
         <br />
 
-        <label for="cooking_expertise">Cooking Expertise</label>
+        <label for="cooking_expertise">Cooking Expertise:</label>
         <select id="cooking_expertise" name="reviewer[cooking_expertise]">
           <option value="" disabled="disabled" selected="selected">-- Select Cooking Expertise --</option>
           <option value="sometimes_cook">Sometimes Cook</option>
@@ -101,6 +101,11 @@
           <option value="cooking_is_a_hobby">Cooking is a Hobby</option>
           <option value="professional_chef">Professional Chef</option>
         </select>
+        <br />
+
+        <label>Review:
+          <textarea name="reviewer[review]" cols="30" rows="5"></textarea>
+        </label>
       </form>
     </section>
 
