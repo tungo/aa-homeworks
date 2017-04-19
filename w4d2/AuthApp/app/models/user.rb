@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token
 
+
 end
