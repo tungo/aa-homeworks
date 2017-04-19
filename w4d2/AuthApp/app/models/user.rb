@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
-  validates :username, :session_token, pressence: true
-  validates :password_digest, pressence: { message: "Password can't be blank" }
-  validates :password, allow_nil: true
+  attr_reader :password
+  
+  validates :username, :session_token, presence: true
+  validates :password_digest, presence: { message: "Password can't be blank" }
+  validates :password, length: { minimum: 6, allow_nil: true }
 
   before_validation :ensure_session_token
 
@@ -18,12 +20,12 @@ class User < ActiveRecord::Base
   end
 
   def reset_session_token!
-    self.session_token = generate_session_token
+    self.session_token = self.class.generate_session_token
     self.save!
   end
 
   def ensure_session_token
-    self.session_token ||= generate_session_token
+    self.session_token ||= self.class.generate_session_token
   end
 
   def password=(password)
