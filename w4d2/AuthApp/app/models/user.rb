@@ -6,4 +6,15 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token
 
 
+  def self.find_by_credentials(username, password)
+    user = find_by(username: username)
+
+    return nil unless user && user.is_password?(password)
+    user
+  end
+
+  private
+  def is_password?(password)
+    BCrypt::Password.new(password_digest).is_password?(password)
+  end
 end
