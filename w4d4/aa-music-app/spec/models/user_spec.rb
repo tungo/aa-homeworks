@@ -20,4 +20,13 @@ RSpec.describe User, type: :model do
       expect(user.is_password?('not password')).to be false
     end
   end
+
+  describe "#reset_session_token!" do
+    it "reset session token on user" do
+      session_token = user.session_token
+      user.reset_session_token!
+
+      expect(user.session_token).to_not eq(session_token)
+    end
+  end
 end
