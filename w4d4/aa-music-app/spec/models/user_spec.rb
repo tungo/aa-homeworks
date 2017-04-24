@@ -29,4 +29,19 @@ RSpec.describe User, type: :model do
       expect(user.session_token).to_not eq(session_token)
     end
   end
+
+
+  describe ".find_by_credentials" do
+    before { user.save! }
+
+    it "return user from username password" do
+      user1 = User.find_by_credentials("tester@appacademy.io", "a password")
+      expect(user1).to eq(user)
+    end
+
+    it "returns nil for wrong credentials" do
+      user1 = User.find_by_credentials("not user", "not password")
+      expect(user1).to eq(nil)
+    end
+  end
 end
