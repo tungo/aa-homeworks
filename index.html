@@ -1,0 +1,137 @@
+<html>
+  <head>
+  <title>Steak Recipe</title>
+  <meta name="description" content="How to cook perfect steak" />
+  <meta charset="utf-8">
+  <script type="text/javascript" src="external_javascript_example.js"/>
+
+  <link rel="stylesheet" href="css_reset.css" type="text/css">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-12345678-9', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  </head>
+  <body>
+    <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Appacademylogo.png" />
+      <nav>
+        <ul>
+          <li>
+            <a href="#description">Description</a>
+          </li>
+          <li>
+            <a href="#ingredients">Ingredients</a>
+          </li>
+          <li>
+            <a href="#directions">Directions</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <h1>Steak</h1>
+
+    <aside>
+      <h2><a name="ingredients" />Ingredients</h2>
+
+      <ul>
+        <li>2 10-12 oz strip loin steaks, 11/2-inches thick</li>
+        <li>2 tbsp olive oil</li>
+        <li>1/2 tsp kosher salt</li>
+        <li>freshly ground pepper</li>
+      </ul>
+    </aside>
+
+    <section>
+      <figure>
+        <img src="http://www.chatelaine.com/wp-content/uploads/2014/08/Anjus-marinated-rib-eye-steak2.jpg" />
+      </figure>
+      <figcaption>
+        <a href="https://en.wikipedia.org/wiki/Steak">https://en.wikipedia.org/wiki/Steak</a>
+      </figcaption>
+
+      <h2>Perfect Grill-less Steak</h2>
+
+      <h2><a name="description" />Description</h2>
+      <p>
+        The barbecue may be hibernating, but that doesn’t mean you have to take a break from grilled steak. <a href="https://en.wikipedia.org/wiki/Steak">Wikipedia</a>
+      </p>
+
+
+      <h2><a name="directions" />Directions</h2>
+      <ol>
+        <li>
+          PREHEAT oven to 250F. Place steaks on a rack over a baking sheet. Rub with 1 tbsp oil and season with salt and pepper. Roast steaks in the centre of the oven for about 20 minutes for medium-rare. Remove from oven.
+        </li>
+        <li>
+          HEAT oil in a medium skillet over high heat. Add steaks and sear until deep brown and crisp, about 3 minutes a side. Hold the steak on their sides and cook the edges for 1 min per side. Remove to rack and let rest for 10 min. Slice and enjoy.
+        </li>
+      </ol>
+    </section>
+
+    <section id="reviews">
+      <form action="/reviews" method="POST" id="review-form">
+        <label for="reviewer-name">Reviewer name:</label>
+        <input type="text" id="reviewer-name" name="reviewer[name]" />
+        <br />
+
+        <label>Rating:</label>
+        <br />
+        <label for="r1">
+          <input type="radio" id="r1" name="reviewer[rating]" value="1" checked="checked" />
+          *
+        </label>
+        <br />
+        <label for="r2">
+          <input type="radio" id="r2" name="reviewer[rating]" value="2" />
+          **
+        </label>
+        <br />
+        <label for="r3">
+          <input type="radio" id="r3" name="reviewer[rating]" value="3" />
+          ***
+        </label>
+        <br />
+        <label for="r4">
+          <input type="radio" id="r4" name="reviewer[rating]" value="4" />
+          ****
+        </label>
+        <br />
+        <label for="r5">
+          <input type="radio" id="r5" name="reviewer[rating]" value="5" />
+          *****
+        </label>
+        <br />
+
+        <label for="cooking_expertise">Cooking Expertise:</label>
+        <select id="cooking_expertise" name="reviewer[cooking_expertise]">
+          <option value="" disabled="disabled" selected="selected">-- Select Cooking Expertise --</option>
+          <option value="sometimes_cook">Sometimes Cook</option>
+          <option value="cook_everyday">Cook Everyday</option>
+          <option value="cooking_is_a_hobby">Cooking is a Hobby</option>
+          <option value="professional_chef">Professional Chef</option>
+        </select>
+        <br />
+
+        <label>Review:
+          <textarea name="reviewer[review]" cols="30" rows="5"></textarea>
+        </label>
+        <br />
+
+        <input type="submit" value="Submit form" />
+      </form>
+    </section>
+
+    <footer>
+      <p>
+        Original Recipe by <a href="http://www.chatelaine.com/recipes/chatelainekitchen/how-to-cook-a-perfect-steak-indoors/">chatelaine.com</a>
+      </p>
+    </footer>
+  </body>
+</html>
