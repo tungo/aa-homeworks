@@ -13,4 +13,6 @@ document.addEventListener("DOMContentLoaded", function(){
   ctx.lineWidth = 5;
   ctx.stroke();
 
+  ctx.fillStyle = 'yellow';
+  ctx.fill();
 });
