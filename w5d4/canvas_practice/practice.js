@@ -15,4 +15,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
   ctx.fillStyle = 'yellow';
   ctx.fill();
+
+  ctx.fillRect(25, 25, 100, 100);
 });
