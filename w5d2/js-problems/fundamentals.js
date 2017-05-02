@@ -19,7 +19,7 @@ function isSubstring(searchString, subString) {
 function fizzBuzz(array) {
   let result = [];
 
-  for (var i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     if ((array[i] % 3 === 0 || array[i] % 5 === 0) && array[i] % 15 !== 0) {
       result.push(array[i]);
     }
@@ -29,3 +29,18 @@ function fizzBuzz(array) {
 }
 
 // console.log(fizzBuzz([1, 3, 5, 9, 10, 15, 30, 31, 35]));
+
+function isPrime(number) {
+  for (let i = 2; i < Math.floor(Math.sqrt(number)); i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// console.log(isPrime(2));
+// console.log(isPrime(10));
+// console.log(isPrime(15485863));
+// console.log(isPrime(3548563));
