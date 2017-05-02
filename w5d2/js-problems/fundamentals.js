@@ -31,7 +31,7 @@ function fizzBuzz(array) {
 // console.log(fizzBuzz([1, 3, 5, 9, 10, 15, 30, 31, 35]));
 
 function isPrime(number) {
-  for (let i = 2; i < Math.floor(Math.sqrt(number)); i++) {
+  for (let i = 2; i <= Math.floor(Math.sqrt(number)); i++) {
     if (number % i === 0) {
       return false;
     }
@@ -44,3 +44,24 @@ function isPrime(number) {
 // console.log(isPrime(10));
 // console.log(isPrime(15485863));
 // console.log(isPrime(3548563));
+
+function sumOfNPrimes(n) {
+  let total = 0;
+  let i = 0;
+  let num = 2;
+
+  while (i < n) {
+    if (isPrime(num)) {
+      total += num;
+      i++;
+    }
+
+    num++;
+  }
+
+  return total;
+}
+
+console.log(sumOfNPrimes(0));
+console.log(sumOfNPrimes(1));
+console.log(sumOfNPrimes(4));
