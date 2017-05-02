@@ -11,3 +11,9 @@ function printCallback(array) {
 }
 
 // titleize(["Mary", "Brian", "Leo"], printCallback);
+
+function Elephant(name, height, tricks) {
+  this.name = name;
+  this.height = height;
+  this.tricks = tricks;
+}
