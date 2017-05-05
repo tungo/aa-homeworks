@@ -1,9 +1,18 @@
 import React from 'react';
 
-const Calculator = () => {
-  return (
-    <h1>Hello world!</h1>
-  );
-};
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello world!</h1>
+      </div>
+    );
+  }
+}
 
 export default Calculator;
