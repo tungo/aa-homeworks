@@ -8,6 +8,11 @@ class Calculator extends React.Component {
 
     this.setNum1 = this.setNum1.bind(this);
     this.setNum2 = this.setNum2.bind(this);
+
+    this.plus = this.plus.bind(this);
+    this.minus = this.minus.bind(this);
+    this.time = this.time.bind(this);
+    this.divide = this.divide.bind(this);
   }
 
   setNum1(e) {
@@ -20,6 +25,26 @@ class Calculator extends React.Component {
     this.setState({ num2 });
   }
 
+  plus() {
+    let result = this.state.num1 + this.state.num2;
+    this.setState({result});
+  }
+
+  minus() {
+    let result = this.state.num1 - this.state.num2;
+    this.setState({result});
+  }
+
+  time() {
+    let result = this.state.num1 * this.state.num2;
+    this.setState({result});
+  }
+
+  divide() {
+    let result = this.state.num1 / this.state.num2;
+    this.setState({result});
+  }
+
   render() {
     return (
       <div>
@@ -27,6 +52,10 @@ class Calculator extends React.Component {
         <input onChange={this.setNum1} value={this.state.num1}></input>
         <input onChange={this.setNum2} value={this.state.num2}></input>
         <br/>
+        <button onClick={this.plus}>+</button>
+        <button onClick={this.minus}>-</button>
+        <button onClick={this.time}>*</button>
+        <button onClick={this.divide}>/</button>
       </div>
     );
   }
