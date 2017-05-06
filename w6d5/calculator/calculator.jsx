@@ -25,25 +25,31 @@ class Calculator extends React.Component {
     this.setState({ num2 });
   }
 
-  plus() {
+  plus(e) {
+    e.preventDefault();
     let result = this.state.num1 + this.state.num2;
     this.setState({result});
   }
 
-  minus() {
+  minus(e) {
+    e.preventDefault();
     let result = this.state.num1 - this.state.num2;
     this.setState({result});
   }
 
-  time() {
+  time(e) {
+    e.preventDefault();
     let result = this.state.num1 * this.state.num2;
     this.setState({result});
   }
 
-  divide() {
+  divide(e) {
+    e.preventDefault();
     let result = this.state.num1 / this.state.num2;
     this.setState({result});
   }
+
+
 
   render() {
     return (
