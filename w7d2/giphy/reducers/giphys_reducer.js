@@ -10,3 +10,5 @@ const GiphysReducer = (state = [], action) => {
       return state;
   }
 };
+
+export default GiphysReducer;
