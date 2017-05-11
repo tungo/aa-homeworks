@@ -32,7 +32,7 @@ class GiphysSearch extends React.Component {
           <button onClick={this.handleSubmit}>Search Giphy</button>
         </form>
         <br />
-        <GiphysIndex giphys={this.giphys} />
+        <GiphysIndex giphys={this.props.giphys} />
       </div>
     );
   }
